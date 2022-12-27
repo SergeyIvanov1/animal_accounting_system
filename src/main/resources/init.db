@@ -1,0 +1,11 @@
+docker run --name postgres_db -p 5432:5432  -e POSTGRES_USER=user -e POSTGRES_PASSWORD=qwerty -e POSTGRES_DB=animals -v /absolut
+e/path/to/folder/with/init_data:/docker-entrypoint-initdb.d -d postgres:13
+
+
+create table animals.data
+(
+    id          SERIAL PRIMARY KEY,
+    weight      CHARACTER VARYING(30),
+    height      CHARACTER VARYING(30),
+    type_animal CHARACTER VARYING(30)
+);
